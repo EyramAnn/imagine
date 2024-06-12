@@ -151,7 +151,6 @@ Math.ceil(Math.random() * 1000000);
 
 
 
-
 // String concatenation
 const firstname = 'Antoinette';
 const lastname = 'Amedza';
@@ -302,6 +301,42 @@ function fullname() {
     return number % 2 === 1;
   }
   numbers.filter(odd);
+
+
+  // Write a function that takes a user and dateOfBirth and returns true if their birthday is today else false
+const user = {
+  name: 'Martin King',
+  dateOfBirth: '1997-06-12'
+}
+
+ function isBirthday(user) {
+   const today = new Date();
+   const birthDate = new Date(user.dateOfBirth);
+   
+   // Debugged with console.log to check for the error
+   // console.log(birthDate.getMonth(), today.getMonth());
+   // console.log(birthDate.getDate(), today.getDate());
+   
+  if (today.getMonth() === birthDate.getMonth() && today.getDate() === birthDate.getDate()){
+    return true;
+  } else {
+     return false;
+  }  
+}
+
+isBirthday(user);
+
+
+// Write a function that takes a user and dateOfBirth and returns a Happy Birthday message if their birthday is today else return not your day.
+
+function birthdayGreeting() {
+  if (isBirthday(user)) {
+    return `Happy birthday, ${user.name}`;
+  } else {
+   return 'not your day';
+ }
+  }
+birthdayGreeting();
   
   
   
